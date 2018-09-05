@@ -1,0 +1,270 @@
+* {
+	padding: 0;
+	margin: 0;
+}
+
+#app {
+	align-items: center;
+	grid-template-columns: 50% 50%;
+	grid-template-rows: auto;
+	grid-template-areas: "sidebar main";
+	display: grid;
+	animation: all 0.6s ease;
+}
+
+.sidebar {
+	position: relative;
+	height: 100vh;
+	background-image: url('./photo.aside.jpg');
+	background-size: 100% auto;
+	background-position: 50% 50%;
+	background-repeat: no-repeat;
+	grid-area: sidebar;
+	transition: all 0.6s ease;
+}
+
+.sidebar:before {
+	content : "";
+	position: absolute;
+	top: 0;
+	right: -11px;
+	width: 180px;
+	height: 100%;
+	background: white;
+	transform: skewX(10deg);
+	transform-origin: top left;
+	z-index: 3;
+	transition: all 0.6s ease;
+}
+
+
+.sidebar-opacity {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background: rgba(0,0,0,0.5);
+	transition: all 0.6s ease;
+}
+
+.content {
+	position: relative;
+	width: 60%;
+	height: 100vh;
+	background: white;
+	grid-area: main;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.6s ease;
+	z-index: 4;
+}
+
+.navbar-button {
+	color: #000;
+	position: absolute;
+	top: 3%;
+	right: 3%;
+	float: right;
+	transition: all 0.6s ease;
+}
+
+.content h2 {
+	margin: 45% 25% 0 25%;
+	width: 100%;
+	font-size: 2em;
+	font-family: "PT Sans", sans-serif;
+	text-align: center;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	transition: all 0.6s ease;
+}
+
+.container p {
+	padding: 15px;
+	margin: 8% 25%;
+	width: 100%;
+	text-align: justify;
+	line-height: 2.2rem;
+	letter-spacing: 2px;
+	font-family: "Raleway", sans-serif;
+	animation: text-animation 0.8s ease;
+	transition: all 0.6s ease;
+}
+
+
+.container p:first-letter {
+	font-size: 2.1em;
+	padding: 10px 2px;
+	transition: all 0.6s ease;
+}
+
+footer {
+	width: 100%;
+	margin: 8% 27%;
+	text-align: center;
+	transition: all 0.6s ease;
+}
+
+
+footer li {
+	list-style: none;
+	display: inline-flex;
+	transition: all 0.6s ease;
+}
+
+footer a {
+	margin: 10px;
+	color: #666;
+	text-decoration: none;
+	font-weight: bold;
+	text-align: center;
+	letter-spacing: 2px;
+	text-transform: uppercase;
+	font-family: "PT Sans", sans-serif;
+	transition: color 0.4s ease;
+	transition: all 0.6s ease;
+}
+
+footer a:hover {
+	color: #888;
+	transition: color 0.4s ease;
+	transition: all 0.6s ease;
+}
+
+footer a i {
+	margin-right: 5px;
+	transition: all 0.6s ease;
+}
+
+footer p {
+	color: #555;
+	margin-top: 15%;
+	text-transform: uppercase;
+	letter-spacing: 3px;
+	font-size: .6rem;
+	font-weight: bold;
+	font-family: "PT Sans", sans-serif;
+	transition: all 0.6s ease;
+}
+
+/** Animations **/
+@keyframes text-animation {
+	0% {
+		transform: translateY(0px);
+	}
+	25% {
+		transform: translateY(-20px);
+	}
+	50% {
+		transform: translateY(20px);
+	}
+	100% {
+		transform: translateY(0px);
+	}
+}
+
+
+/*** Responsive Laptop ***/
+@media only screen and (max-height: 800px) {
+	.content h2 {
+		margin: 30% 25% 0 25%;
+		width: 100%;
+		font-size: 1.8em;
+		font-family: "PT Sans", sans-serif;
+		text-align: center;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		transition: all 0.6s ease;
+	}
+
+	.container p {
+		padding: 15px;
+		margin: 8% 10%;
+		width: 120%;
+		text-align: justify;
+		line-height: 2rem;
+		letter-spacing: 2px;
+		font-family: "Raleway", sans-serif;
+		font-size: 0.8rem;
+		animation: text-animation 0.8s ease;
+		transition: all 0.6s ease;
+	}
+
+	footer a {
+		margin: 10px;
+		color: #666;
+		text-decoration: none;
+		font-weight: bold;
+		text-align: center;
+		letter-spacing: 2px;
+		font-size: 0.6rem;
+		text-transform: uppercase;
+		font-family: "PT Sans", sans-serif;
+		transition: color 0.4s ease;
+		transition: all 0.6s ease;
+	}
+
+	footer p {
+		color: #555;
+		margin-top: 15%;
+		text-transform: uppercase;
+		letter-spacing: 3px;
+		font-size: .5rem;
+		font-weight: bold;
+		font-family: "PT Sans", sans-serif;
+		transition: all 0.6s ease;
+	}
+
+}
+
+/*** Responsive Mobile ***/
+@media only screen and (max-width: 600px) {
+	#app {
+		align-items: center;
+		grid-template-columns: 0% 100%;
+		grid-template-rows: auto;
+		grid-template-areas: "sidebar main";
+		display: grid;
+		animation: all 0.6s ease;
+		transition: all 0.6s ease;
+	}
+
+	.navbar-button {
+		color: #000;
+		position: absolute;
+		top: 3%;
+		right: 8%;
+		float: right;
+		transition: all 0.6s ease;
+	}
+
+   .sidebar {
+		display: none;
+		transition: all 0.6s ease;
+	}
+
+	.content h2 {
+		margin: 50% 25% 0 25%;
+		width: 100%;
+		font-size: 1.8em;
+		font-family: "PT Sans", sans-serif;
+		text-align: center;
+		letter-spacing: 2px;
+		text-transform: uppercase;
+		transition: all 0.6s ease;
+	}
+
+	.container p {
+		padding: 15px;
+		margin: 8% 25%;
+		width: 100%;
+		text-align: justify;
+		line-height: 2rem;
+		letter-spacing: 2px;
+		font-family: "Raleway", sans-serif;
+		font-size: 0.9rem;
+		animation: text-animation 0.8s ease;
+		transition: all 0.6s ease;
+	}
+}
